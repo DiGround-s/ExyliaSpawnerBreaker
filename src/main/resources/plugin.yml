@@ -1,0 +1,32 @@
+name: ExyliaSpawnerBreaker
+version: '1.0.0'
+main: net.exylia.exyliaSpawnerBreaker.ExyliaSpawnerBreaker
+api-version: '1.18'
+authors: [ DiGround ]
+description: Advanced pickaxes to break spawners with protection bypass
+website: https://link.exylia.net/@services
+
+softdepend:
+  - WorldGuard
+  - VirtualSpawner
+
+permissions:
+  spawnerbreaker.help:
+    description: Permite ver la ayuda del plugin
+    default: true
+  spawnerbreaker.give:
+    description: Permite dar picos especiales
+    default: op
+  spawnerbreaker.reload:
+    description: Permite recargar la configuración
+    default: op
+  spawnerbreaker.types:
+    description: Permite ver tipos de picos
+    default: op
+libraries:
+  - 'net.kyori:adventure-platform-bukkit:4.3.4'
+  - 'com.github.ben-manes.caffeine:caffeine:3.2.2'
+  - 'com.google.inject:guice:7.0.0'
+  - 'io.github.revxrsal:lamp.common:4.0.0-rc.14'
+  - 'io.github.revxrsal:lamp.bukkit:4.0.0-rc.14'
+  - 'io.github.revxrsal:lamp.brigadier:4.0.0-rc.14'

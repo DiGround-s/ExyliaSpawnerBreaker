@@ -1,0 +1,92 @@
+debug: false
+pickaxe-types:
+  basic:
+    enabled: true
+    material: DIAMOND_PICKAXE
+    display-name: "<gradient:#FFD700:#FFA500><bold>Pico Básico</bold></gradient>"
+    lore:
+      - ""
+      - "<gray>Usos restantes: <gold>{uses}</gold>"
+      - ""
+      - "<yellow>⚠ Rompe spawners sin protección</yellow>"
+      - "<red>✗ No ignora WorldGuard</red>"
+    default-uses: 10
+    bypass-protection: false
+    custom-model-data: 0
+    enchantments:
+      - "EFFICIENCY:3"
+      - "UNBREAKING:2"
+
+  advanced:
+    enabled: true
+    material: NETHERITE_PICKAXE
+    display-name: "<gradient:#00FFFF:#0080FF><bold>Pico Avanzado</bold></gradient>"
+    lore:
+      - ""
+      - "<gray>Usos restantes: <aqua>{uses}</aqua>"
+      - ""
+      - "<green>✓ Rompe spawners protegidos</green>"
+      - "<green>✓ Ignora WorldGuard</green>"
+    default-uses: 50
+    bypass-protection: true
+    custom-model-data: 1001
+    enchantments:
+      - "EFFICIENCY:5"
+      - "UNBREAKING:5"
+
+  supreme:
+    enabled: true
+    material: NETHERITE_PICKAXE
+    display-name: "<gradient:#FF1493:#8B008B><bold>⚡ Pico Supremo ⚡</bold></gradient>"
+    lore:
+      - ""
+      - "<gray>Usos restantes: <light_purple>{uses}</light_purple>"
+      - ""
+      - "<green>✓ Rompe spawners protegidos</green>"
+      - "<green>✓ Ignora WorldGuard</green>"
+      - "<gold>✓ Máxima durabilidad</gold>"
+    default-uses: 500
+    bypass-protection: true
+    custom-model-data: 1002
+    enchantments:
+      - "EFFICIENCY:5"
+      - "UNBREAKING:10"
+      - "MENDING:1"
+
+messages:
+  pickaxe-received: "<green>Has recibido un pico <aqua>{type}</aqua> con <gold>{uses}</gold> usos!"
+  pickaxe-broken: "<red>¡Tu pico se ha roto!"
+  spawner-broken: "<green>¡Spawner roto! Usos restantes: <gold>{uses}</gold>"
+  spawner-broken-actionbar: "<gold>⛏ Usos restantes: <yellow>{uses}</yellow>"
+  inventory-full: "<red>¡Tu inventario está lleno! Necesitas espacio para recoger el spawner."
+  no-permission: "<red>No tienes permiso para hacer esto."
+  invalid-type: "<red>Tipo de pico inválido. Usa /spawnerbreaker types"
+  player-not-found: "<red>Jugador no encontrado."
+  reload-success: "<green>Configuración recargada correctamente!"
+  reload-error: "<red>Error al recargar la configuración."
+  types-header: "<yellow>Tipos de picos disponibles:"
+  types-format: "  <gray>- <aqua>{type}</aqua> <dark_gray>(<gold>{uses}</gold> usos)"
+  protected-spawner: "<red>Este spawner está protegido y tu pico no puede romperlo."
+
+effects:
+  break-spawner:
+    particles:
+      enabled: true
+      type: END_ROD
+      amount: 30
+      offset-x: 0.5
+      offset-y: 0.5
+      offset-z: 0.5
+    sound:
+      enabled: true
+      type: BLOCK_GLASS_BREAK
+      volume: 1.0
+      pitch: 0.8
+    actionbar:
+      enabled: true
+
+integrations:
+  virtual-spawners:
+    enabled: true
+  worldguard:
+    enabled: true
